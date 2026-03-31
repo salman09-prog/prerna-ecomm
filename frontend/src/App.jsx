@@ -18,6 +18,7 @@ import PurchaseCancelPage from "./pages/PurchaseCancelPage";
 
 function App() {
 	const { user, checkAuth, checkingAuth } = useUserStore();
+	console.log(user)
 	const { getCartItems } = useCartStore();
 	useEffect(() => {
 		checkAuth();
