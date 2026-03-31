@@ -1,8 +1,8 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-	baseURL: import.meta.mode === "development" ? "http://localhost:5000/api" : "/api",
-	withCredentials: true, // send cookies to the server
-});
+    // It will look for VITE_API_URL in your Vercel settings or .env file
+    baseURL: "https://prerna-ecomm-1.onrender.com"
+})
 
 export default axiosInstance;
