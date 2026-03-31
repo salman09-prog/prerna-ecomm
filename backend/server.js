@@ -25,7 +25,6 @@ app.use(cookieParser());
 
 app.use(cors({
     origin: process.env.CLIENT_URL, // You'll set this to your Vercel URL later
-    credentials: true
 }));
 
 app.use("/api/auth", authRoutes);
