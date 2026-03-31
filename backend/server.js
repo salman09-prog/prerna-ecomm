@@ -24,8 +24,10 @@ app.use(express.json({ limit: "10mb" })); // allows you to parse the body of the
 app.use(cookieParser());
 
 app.use(cors({
-    origin: process.env.CLIENT_URL, // You'll set this to your Vercel URL later
-    credentials: true
+    origin: "https://prerna-ecomm.vercel.app", // Your EXACT Vercel URL
+    credentials: true,                        // Required for cookies/sessions
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"]
 }));
 
 app.use("/api/auth", authRoutes);
