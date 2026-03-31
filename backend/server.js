@@ -23,12 +23,7 @@ const __dirname = path.resolve();
 app.use(express.json({ limit: "10mb" })); // allows you to parse the body of the request
 app.use(cookieParser());
 
-app.use(cors({
-    origin: "https://prerna-ecomm.vercel.app", // Your EXACT Vercel URL
-    credentials: true,                        // Required for cookies/sessions
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"]
-}));
+app.use(cors({ origin: CLIENT_URL }));
 
 app.use("/api/auth", authRoutes);
 app.use("/api/products", productRoutes);
